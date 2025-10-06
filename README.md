@@ -1,6 +1,6 @@
 # Counterfactual Preference Optimization (CPO)
 
-This repository is a PyTorch implementation of resilient contrastive learning proposed in *Walking the Tightrope: Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning* (submitted)
+This repository is a PyTorch implementation of resilient contrastive learning proposed in *Walking the Tightrope: Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning* (NeurIPS 2025)
 
 
 This paper uncovers a critical yet overlooked phenomenon in multi-modal large language models (MLLMs): detrimental concept drift within chain-of-thought (CoT) reasoning during non-stationary reinforcement fine-tuning (RFT), where reasoning token distributions evolve unpredictably, thereby introducing significant biases in final predictions. To address this, we are pioneers in establishing the theoretical bridge between concept drift theory and RFT processes by formalizing CoT's autoregressive token streams as non-stationary distributions undergoing arbitrary temporal shifts. Leveraging this framework, we propose a novel counterfact-aware RFT that systematically decouples beneficial distribution adaptation from harmful concept drift through concept graph-empowered LLM experts generating counterfactual reasoning trajectories. Our solution, Counterfactual Preference Optimization (CPO), enables stable RFT in non-stationary environments, particularly within the medical domain, through custom-tuning of counterfactual-aware preference alignment. Extensive experiments demonstrate our superior performance of robustness, generalization and coordination within RFT. Besides, we also contributed a large-scale dataset CXR-CounterFact (CCF), comprising 320,416 meticulously curated counterfactual reasoning trajectories derived from MIMIC-CXR. Our code and data are public.
@@ -49,3 +49,15 @@ We have upload this dataset on [huggingface](https://huggingface.co/datasets/Mia
 ```bash
 git clone https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact
 ```
+
+If you find this repository useful for your research, please consider citing our paper:
+
+```bibtex
+@article{yang2025walking,
+  title={Walking the tightrope: Disentangling beneficial and detrimental drifts in non-stationary custom-tuning},
+  author={Yang, Xiaoyu and Lu, Jie and Yu, En},
+  journal={arXiv preprint arXiv:2505.13081},
+  year={2025}
+}
+```
+
