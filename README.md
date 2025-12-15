@@ -53,11 +53,12 @@ git clone https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact
 If you find this repository useful for your research, please consider citing our paper:
 
 ```bibtex
-@article{yang2025walking,
-  title={Walking the tightrope: Disentangling beneficial and detrimental drifts in non-stationary custom-tuning},
-  author={Yang, Xiaoyu and Lu, Jie and Yu, En},
-  journal={arXiv preprint arXiv:2505.13081},
-  year={2025}
+@inproceedings{yang2025walking,
+  title={Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning},
+  author={Xiaoyu Yang and Jie Lu and En Yu},
+  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
+  year={2025},
+  url={https://openreview.net/forum?id=1BAiQmAFsx}
 }
 ```
 
