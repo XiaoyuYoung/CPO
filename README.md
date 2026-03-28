@@ -1,7 +1,7 @@
 # Counterfactual Preference Optimization (CPO)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2505.13081-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2505.13081) 
-[![Web](https://img.shields.io/badge/Web-CPO-blue.svg?style=plastic)](https://xiaoyuyoung.github.io/CPO/) 
+[![Web](https://img.shields.io/badge/Project-CPO-blue.svg?style=plastic)](https://xiaoyuyoung.github.io/CPO/) 
 [![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow?style=plastic)]([https://huggingface.co/collections/KaiChen1998/coda-lm-6726500ab7d88dbcf9dc3fd0](https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact))
 
 
