@@ -1,8 +1,21 @@
-# Counterfactual Preference Optimization (CPO)
+<div align="center">
+<h1>Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning</h1>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2505.13081-b31b1b.svg?style=plastic)](https://arxiv.org/abs/2505.13081) 
-[![Web](https://img.shields.io/badge/Project-CPO-blue.svg?style=plastic)](https://xiaoyuyoung.github.io/CPO/) 
-[![HF](https://img.shields.io/badge/%F0%9F%A4%97-HuggingFace-yellow?style=plastic)]([https://huggingface.co/collections/KaiChen1998/coda-lm-6726500ab7d88dbcf9dc3fd0](https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact))
+[**Xiaoyu Yang**](https://xiaoyuyoung.github.io/)<sup>1</sup>&emsp;
+[**Jie Lu**](https://profiles.uts.edu.au/Jie.Lu)<sup>1</sup>&emsp;
+**En Yu**<sup>1</sup>&emsp;
+
+<sup>1</sup>University of Technology Sydney
+
+**NeurIPS 2025**
+
+<a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://img.shields.io/badge/Project_Page-Counterfactual Preference Optimization (CPO)-green' alt='Project Page'></a>
+
+<a href="https://arxiv.org/abs/2505.13081"><img src='https://img.shields.io/badge/arXiv-2505.13081-b31b1b' alt='arXiv'></a>
+<a href="https://openreview.net/forum?id=1BAiQmAFsx"><img src='https://img.shields.io/badge/OpenReview-NeurIPS 2025-b31b1b' alt='OpenReview'></a>
+<a href='https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact'><img src='https://img.shields.io/badge/HuggingFace%F0%9F%A4%97-Dataset-yellow?style=plastic' alt='Dataset'></a>
+<!-- <a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://visitor-badge.laobi.icu/badge?page_id=XiaoyuYoung.CPO' alt='Visitor Counter'></a> -->
+</div>
 
 
 This repository is a PyTorch implementation of resilient contrastive learning proposed in *Walking the Tightrope: Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning* (NeurIPS 2025)
