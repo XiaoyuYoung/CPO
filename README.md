@@ -5,7 +5,7 @@
 [**Jie Lu**](https://profiles.uts.edu.au/Jie.Lu)<sup>1</sup>&emsp;
 **En Yu**<sup>1</sup>&emsp;
 
-<sup>1</sup>University of Technology Sydney
+<sup>1</sup>University of Technology Sydney, Sydney, Australia
 
 **NeurIPS 2025**
 
