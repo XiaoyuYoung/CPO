@@ -12,7 +12,7 @@
 <a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://img.shields.io/badge/Project_Page-Counterfactual Preference Optimization (CPO)-green' alt='Project Page'></a>
 
 <a href="https://arxiv.org/abs/2505.13081"><img src='https://img.shields.io/badge/arXiv-2505.13081-b31b1b' alt='arXiv'></a>
-<a href="https://openreview.net/forum?id=1BAiQmAFsx"><img src='https://img.shields.io/badge/OpenReview-NeurIPS 2025-b31b1b' alt='OpenReview'></a>
+<a href="https://openreview.net/forum?id=1BAiQmAFsx"><img src='https://img.shields.io/badge/OpenReview-NeurIPS 2025-blue' alt='OpenReview'></a>
 <a href='https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact'><img src='https://img.shields.io/badge/HuggingFace%F0%9F%A4%97-Dataset-yellow?style=plastic' alt='Dataset'></a>
 <!-- <a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://visitor-badge.laobi.icu/badge?page_id=XiaoyuYoung.CPO' alt='Visitor Counter'></a> -->
 </div>
