@@ -1,56 +1,118 @@
 <div align="center">
-<h1>Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning</h1>
 
-[**Xiaoyu Yang**](https://xiaoyuyoung.github.io/)<sup>1</sup>&emsp;
-[**Jie Lu**](https://profiles.uts.edu.au/Jie.Lu)<sup>1</sup>&emsp;
-**En Yu**<sup>1</sup>&emsp;
+# CPO & CPO++
 
-<sup>1</sup>University of Technology Sydney, Sydney, Australia
+### Counterfactual Preference Optimization for Robust Multimodal Reasoning
 
-**NeurIPS 2025**
 
-<a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://img.shields.io/badge/Project_Page-Counterfactual Preference Optimization (CPO)-green' alt='Project Page'></a>
+[![Project Page](https://img.shields.io/badge/Project-CPO-2ea44f)](https://xiaoyuyoung.github.io/CPO/)
+[![CPO arXiv](https://img.shields.io/badge/CPO-arXiv%3A2505.13081-b31b1b)](https://arxiv.org/abs/2505.13081)
+[![OpenReview](https://img.shields.io/badge/OpenReview-NeurIPS%202025-4b44ce)](https://openreview.net/forum?id=1BAiQmAFsx)
 
-<a href="https://arxiv.org/abs/2505.13081"><img src='https://img.shields.io/badge/arXiv-2505.13081-b31b1b' alt='arXiv'></a>
-<a href="https://openreview.net/forum?id=1BAiQmAFsx"><img src='https://img.shields.io/badge/OpenReview-NeurIPS 2025-blue' alt='OpenReview'></a>
-<a href='https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact'><img src='https://img.shields.io/badge/HuggingFace%F0%9F%A4%97-Dataset-yellow?style=plastic' alt='Dataset'></a>
-<!-- <a href='https://xiaoyuyoung.github.io/CPO/'><img src='https://visitor-badge.laobi.icu/badge?page_id=XiaoyuYoung.CPO' alt='Visitor Counter'></a> -->
+[![CPO++ arXiv](https://img.shields.io/badge/CPO%2B%2B-arXiv%3A2604.15705-b31b1b)](https://arxiv.org/abs/2604.15705)
+[![Dataset](https://img.shields.io/badge/%F0%9F%A4%97%20Dataset-CXR--CounterFact-f0c000)](https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact)
+
+
 </div>
 
+## News
 
-This repository is a PyTorch implementation of Counterfactual Preference Optimization (CPO) proposed in *Walking the Tightrope: Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning* (NeurIPS 2025)
+- **CPO** has been accepted at **NeurIPS 2025**.
+- The CPO training code and the **CXR-CounterFact** dataset are publicly available.
+- The **CPO++** paper is available on [arXiv](https://arxiv.org/abs/2604.15705), and its implementation is publicly released in this repository.
+
+## Overview
+
+This repository provides the official implementation and resources for **Counterfactual Preference Optimization (CPO)** and its extended framework, **Counterfactual Preference Optimization++ (CPO++)**.
 
 
-This paper uncovers a critical yet overlooked phenomenon in multi-modal large language models (MLLMs): detrimental concept drift within chain-of-thought (CoT) reasoning during non-stationary reinforcement fine-tuning (RFT), where reasoning token distributions evolve unpredictably, thereby introducing significant biases in final predictions. To address this, we are pioneers in establishing the theoretical bridge between concept drift theory and RFT processes by formalizing CoT's autoregressive token streams as non-stationary distributions undergoing arbitrary temporal shifts. Leveraging this framework, we propose a novel counterfact-aware RFT that systematically decouples beneficial distribution adaptation from harmful concept drift through concept graph-empowered LLM experts generating counterfactual reasoning trajectories. Our solution, Counterfactual Preference Optimization (CPO), enables stable RFT in non-stationary environments, particularly within the medical domain, through custom-tuning of counterfactual-aware preference alignment. Extensive experiments demonstrate our superior performance of robustness, generalization and coordination within RFT. Besides, we also contributed a large-scale dataset CXR-CounterFact (CCF), comprising 320,416 meticulously curated counterfactual reasoning trajectories derived from MIMIC-CXR. Our code and data are public.
-
-The code in this repo is copied/modified from [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL).
+**CPO** studies detrimental concept drift in chain-of-thought reasoning during non-stationary reinforcement fine-tuning. It constructs radiologically plausible counterfactual reasoning trajectories with domain concept graphs and uses preference optimization to disentangle beneficial domain adaptation from harmful reasoning drift.
 
 
-![](./images/workflow.png)
 
-The main contributions of our methods. 
-- (a) By formalizing autoregressive CoT generation as a stream of next-token prediction actions under the theoretical lens of concept drift, we reveal that even minor perturbations in reinforced fine-tuning can induce unpredictable distributional changes of final predicted results. 
-- (b) To disentangle detrimental drift, we introduce the concept graph that generates radiologically plausible counterfactual CoTs through controlled attribute perturbations. Green lines represent attributes that are positively correlated with the disease, while red denote they are exclusive. 
-- (c) We propose counterfactual preference optimization to drive the reinforced custom-tuning of MLLMs, enabling generalized CoT reasoning in non-stationary environments through disentanglement of beneficial domain adaptation from spurious concept drift, thereby achieving robust human-aligned decision-making via preference distillation.
 
-------------------------------------------
+**CPO++** extends counterfactual drift disentanglement from the thinking stream to joint perception–thinking alignment. It targets endogenous multimodal reasoning drift under non-stationary multi-stream supervision by incorporating hierarchical domain knowledge, autonomous counterfactual perception and thinking trajectories, perception–thinking consistency constraints, and policy-adaptive preference optimization.
+
+In short, **CPO stabilizes how a model reasons, while CPO++ closes the perception–reasoning loop by jointly stabilizing what the model perceives and how it reasons.**
+
+## CPO and CPO++ at a Glance
+
+| Framework | Alignment scope | Main challenge | Key components | Evaluation domains |
+|---|---|---|---|---|
+| **CPO** | Thinking/reasoning stream | Detrimental CoT drift during non-stationary fine-tuning | Domain concept graph, counterfactual CoTs, counterfactual preference optimization | Medical diagnosis |
+| **CPO++** | Perception and thinking streams | Endogenous multimodal reasoning drift under multi-stream supervision | Hierarchical domain knowledge, counterfactual perception and thinking, perception–thinking consistency, policy-adaptive alignment | Medical diagnosis and autonomous driving |
+
+## Papers
+
+### CPO
+
+**Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning**  
+Xiaoyu Yang, Jie Lu, and En Yu  
+*The Thirty-Ninth Annual Conference on Neural Information Processing Systems (NeurIPS 2025)*
+
+[[Project Page](https://xiaoyuyoung.github.io/CPO/)]
+[[arXiv](https://arxiv.org/abs/2505.13081)]
+[[OpenReview](https://openreview.net/forum?id=1BAiQmAFsx)]
+[[Dataset](https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact)]
+
+### CPO++
+
+**Towards Robust Endogenous Reasoning: Unifying Drift Adaptation in Non-Stationary Tuning**  
+Xiaoyu Yang, En Yu, Wei Duan, and Jie Lu  
+*arXiv preprint, 2026*
+
+[[arXiv](https://arxiv.org/abs/2604.15705)]
+[[PDF](https://arxiv.org/pdf/2604.15705)]
+
+## Method
+
+### CPO: Counterfactual Reasoning Alignment
+
+![CPO framework](./images/CPO.png)
+
+CPO contains three main stages:
+
+1. **Concept-drift formulation.** Autoregressive CoT generation is modeled as a stream of next-token prediction actions, exposing unpredictable distributional changes during non-stationary fine-tuning.
+2. **Counterfactual trajectory construction.** A radiological concept graph guides controlled attribute perturbations to generate clinically plausible counterfactual CoTs.
+3. **Counterfactual preference optimization.** Preference alignment separates beneficial domain adaptation from spurious reasoning drift, improving robustness and generalization.
+
+### CPO++: Perception–Thinking Consistent Alignment
+
+![CPO framework](./images/CPO++.png)
+
+
+CPO++ advances CPO through four extensions:
+
+1. **Hierarchical domain knowledge** for structured multimodal counterfactual construction.
+2. **Autonomous counterfactual perception and thinking trajectories** that cover both visual interpretation and downstream reasoning.
+3. **Perception–thinking consistency constraints** that identify and suppress mismatches across the multimodal reasoning process.
+4. **Policy-adaptive preference optimization** that aligns informative counterfactual constraints with the evolving model policy.
+
+
+
 
 ## Training
 
-The supervised-fining (SFT) and reinforced fine-tuning (RFT) are supported by [ms-swift](https://github.com/modelscope/ms-swift)
+The current implementation is built with [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL), and its supervised and preference fine-tuning pipelines are supported by [ms-swift](https://github.com/modelscope/ms-swift).
+
 
 To supervised-fine the Qwen2.5-VL with multi-node distributed training, run the following with 2 GPUs:
 
 ```bash
 nohup bash SFT-Qwen2.5.sh > sft.log 2>&1 &
 ```
-
-To reinforced fine-tune the Qwen2.5-VL with multi-node distributed training, run the following with 2 GPUs:
-
+To reinforced fine-tune with CPO the Qwen2.5-VL with multi-node distributed training, run the following:
 
 ```bash
-nohup bash CPO-Qwen2.5.sh > cpo.log 2>&1 &
+nohup bash CPO/CPO-Qwen2.5.sh > cpo.log 2>&1 &
 ```
+
+To reinforced fine-tune with CPO++ the Qwen2.5-VL with multi-node distributed training, run the following:
+
+```bash
+nohup bash CPO++/CPO-plus-Qwen2.5.sh > cpo++.log 2>&1 &
+```
+
 
 ## CXR-CounterFact (CCF) Dataset
 
@@ -68,15 +130,38 @@ We have upload this dataset on [huggingface](https://huggingface.co/datasets/Mia
 git clone https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact
 ```
 
-If you find this repository useful for your research, please consider citing our paper:
+
+## Release Roadmap
+
+- [x] CPO paper
+- [x] CPO training code
+- [x] CXR-CounterFact dataset
+- [x] CPO++ paper ([arXiv:2604.15705](https://arxiv.org/abs/2604.15705))
+- [x] CPO++ code
+- [ ] CPO++ model checkpoints
+
+## Citation
+
+If you find CPO useful for your research, please cite:
 
 ```bibtex
 @inproceedings{yang2025walking,
-  title={Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning},
-  author={Xiaoyu Yang and Jie Lu and En Yu},
-  booktitle={The Thirty-ninth Annual Conference on Neural Information Processing Systems},
-  year={2025},
-  url={https://openreview.net/forum?id=1BAiQmAFsx}
+  title     = {Walking the Tightrope: Autonomous Disentangling Beneficial and Detrimental Drifts in Non-Stationary Custom-Tuning},
+  author    = {Yang, Xiaoyu and Lu, Jie and Yu, En},
+  booktitle = {The Thirty-Ninth Annual Conference on Neural Information Processing Systems},
+  year      = {2025},
+  url       = {https://openreview.net/forum?id=1BAiQmAFsx}
+}
+
+@article{yang2026towards,
+  title   = {Towards Robust Endogenous Reasoning: Unifying Drift Adaptation in Non-Stationary Tuning},
+  author  = {Yang, Xiaoyu and Yu, En and Duan, Wei and Lu, Jie},
+  journal = {arXiv preprint arXiv:2604.15705},
+  year    = {2026},
+  url     = {https://arxiv.org/abs/2604.15705}
 }
 ```
 
+## Acknowledgements
+
+This repository builds upon [Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL) and [ms-swift](https://github.com/modelscope/ms-swift). We thank their contributors for making these resources publicly available.

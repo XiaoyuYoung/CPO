@@ -7,7 +7,7 @@ MAX_PIXELS=1003520 \
 RESIZED_HEIGHT=512 \
 RESIZED_WIDTH=512 \
 swift rlhf \
-    --rlhf_type dpo \
+    --rlhf_type cpo \
     --model /output-Qwen2.5-VL-7B-Instruct/v0/checkpoint-660-merged \
     --dataset ./mimic-cpo-cot.json \
     --train_type lora \
