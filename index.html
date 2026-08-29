@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  
   <style>
     .publication-title { font-family: 'Google Sans', sans-serif; font-weight: 700; }
     .author-block a { color: #007bff; }
@@ -134,8 +134,7 @@
       <div class="column has-text-centered">
         <div class="publication-links">
           <a href="https://github.com/XiaoyuYoung/CPO" class="button is-dark is-rounded"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
-          <a href="https://openreview.net/forum?id=1BAiQmAFsx" class="button is-dark is-rounded"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>OpenReview</span></a>
-          <a href="https://arxiv.org/abs/2505.13081" class="button is-dark is-rounded"><span class="icon"><i class="ai ai-arxiv"></i></span><span>Arxiv</span></a>
+          <a href="https://openreview.net/pdf?id=1BAiQmAFsx" class="button is-dark is-rounded"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
           <a href="https://huggingface.co/datasets/MiaoMiaoYang/CXR-CounterFact" class="button is-dark is-rounded"><span class="icon"><p style="font-size:18px">🤗</p></span><span>Dataset</span></a>
         </div>
       </div>
@@ -244,10 +243,10 @@
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:11px;color:#888;">
           <span style="display:flex;align-items:center;gap:5px;">
-            <span style="width:10px;height:10px;border-radius:2px;background:#6baed6;display:inline-block;"></span>opacity
+            <span style="width:10px;height:10px;border-radius:2px;background:#6baed6;display:inline-block;"></span>lung opacity
           </span>
           <span style="display:flex;align-items:center;gap:5px;">
-            <span style="width:10px;height:10px;border-radius:2px;background:#fd8d3c;display:inline-block;"></span>lung opacity
+            <span style="width:10px;height:10px;border-radius:2px;background:#fd8d3c;display:inline-block;"></span>opacity
           </span>
         </div>
         <br>
@@ -516,7 +515,8 @@ const origThink = [
   { t: " .", p: 0.95 },
   { t: " Asymm", p: 0.31 },
   { t: "etric", p: 0.99 },
-  { t: " opacity", p: 0.62, perturbed: true },
+  { t: " lung", p: 0.78, perturbed: true },
+  { t: " opacity", p: 0.85, perturbed: true },
   { t: " in", p: 0.90 },
   { t: " the", p: 0.95 },
   { t: " right", p: 0.73 },
@@ -595,8 +595,7 @@ const pertTokens = [
   { t: " .", p: 0.96 },
   { t: " Asymm", p: 0.32 },
   { t: "etric", p: 0.99 },
-  { t: " lung", p: 0.78, perturbed: true },
-  { t: " opacity", p: 0.85, perturbed: true },
+  { t: " opacity", p: 0.64, perturbed: true },
 ];
 
 function probToStyle(p) {
